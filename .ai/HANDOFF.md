@@ -42,7 +42,7 @@ Bootstrap done and pushed. All Markdown translated to English (Language-002); `d
 
 ## Validation Performed
 
-- Repo-wide regex scan for `[ãõçéèêíóôúâàü...]`: zero `.md` hits. Phases 1–7 not validated yet.
+- Repo-wide diacritics scan over all Markdown files: zero hits. Phases 1–7 not validated yet.
 
 ## Next Actions
 
