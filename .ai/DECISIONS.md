@@ -43,52 +43,63 @@ Consequences:
 
 | ID | Type | Title | Status | Date | File |
 | --- | --- | --- | --- | --- | --- |
-| ADR-001 | ADR | n8n como orquestrador principal | Accepted | 2026-09-25 | inline |
-| TDR-001 | TDR | Stack do MVP | Accepted | 2026-09-25 | inline |
-| ADR-002 | ADR | Somente leitura + humano decide | Accepted | 2026-09-25 | inline |
-| Language-001 | TDR | Comentários em inglês | Accepted | 2026-09-25 | inline |
+| ADR-001 | ADR | n8n as primary orchestrator | Accepted | 2026-09-25 | inline |
+| TDR-001 | TDR | MVP stack | Accepted | 2026-09-25 | inline |
+| ADR-002 | ADR | Read-only + human decides | Accepted | 2026-09-25 | inline |
+| Language-001 | TDR | Code comments in English | Accepted | 2026-09-25 | inline |
+| Language-002 | TDR | All Markdown in English | Accepted | 2026-09-25 | inline |
 
 ## Records
 
-### ADR-001 — n8n como orquestrador principal
+### ADR-001 — n8n as primary orchestrator
 Type: ADR
 Status: Accepted
 Date: 2026-09-25
-Owners: solicitante
+Owners: requester
 
-Context: MVP precisa de workflow visível, exportável e com retry/logs para portfólio.
-Decision: n8n orquestra (webhook → valida → contexto → agente → MCP → diagnóstico → banco → revisão humana); workflow versionado em `workflows/cloudops-investigation.json`.
-Consequences: requer n8n no Docker Compose + doc de importação.
+Context: MVP needs a visible, exportable workflow with retry/logs for portfolio purposes.
+Decision: n8n orchestrates (webhook → validate → context → agent → MCP → diagnosis → database → human review); workflow versioned in `workflows/cloudops-investigation.json`.
+Consequences: requires n8n in Docker Compose + import doc.
 
-### TDR-001 — Stack do MVP
+### TDR-001 — MVP stack
 Type: TDR
 Status: Accepted
 Date: 2026-09-25
-Owners: solicitante
+Owners: requester
 
-Context: MVP funcional rápido, sem dados reais.
-Decision: FastAPI + MCP Python + SQLite + Docker Compose; frontend Next.js+TS+Tailwind (Streamlit só como fallback); RAG com ChromaDB ou pgvector; LLM via env (Claude/OpenAI/Gemini).
-Consequences: frontend ainda pendente de escolha final.
+Context: Fast functional MVP, no real data.
+Decision: FastAPI + Python MCP + SQLite + Docker Compose; Next.js+TS+Tailwind frontend; RAG with ChromaDB; LLM via env (Claude/OpenAI/Gemini).
+Consequences: stack confirmed on 2026-09-25 (no longer pending).
 
-### ADR-002 — Somente leitura + humano decide
+### ADR-002 — Read-only + human decides
 Type: ADR
 Status: Accepted
 Date: 2026-09-25
-Owners: solicitante
+Owners: requester
 
-Context: IA apoia investigação, nunca executa ação destrutiva/autônoma.
-Decision: MCP tools somente-leitura com dados sintéticos; ações de risco exigem aprovação humana; logs/runbooks tratados como dados não confiáveis (detecção de prompt injection).
-Consequences: testes de avaliação cobrem essas garantias; sem credenciais no repo.
+Context: AI assists investigation, never performs destructive/autonomous actions.
+Decision: read-only MCP tools with synthetic data; risky actions require human approval; logs/runbooks treated as untrusted data (prompt-injection detection).
+Consequences: evaluation tests cover these guarantees; no credentials in the repo.
 
-### Language-001 — Comentários em inglês
+### Language-001 — Code comments in English
 Type: TDR
 Status: Accepted
 Date: 2026-09-25
-Owners: solicitante (pedido direto)
+Owners: requester (direct request)
 
-Context: Pedido explícito "comentarios todos em ingles".
-Decision: Todos os comentários de código em inglês; UI e docs voltadas ao usuário em pt-BR.
-Consequences: validação inclui checagem de idioma dos comentários.
+Context: Explicit request ("comentarios todos em ingles").
+Decision: All code comments in English, in every source file and language.
+Consequences: validation includes a comment-language check.
+
+### Language-002 — All Markdown in English
+Type: TDR
+Status: Accepted
+Date: 2026-09-25
+Owners: requester (direct request)
+
+Context: Explicit request ("faca todos os mds em ingles"); supersedes the earlier Portuguese-docs rule for Markdown files.
+Decision: Every `.md` file in the repo is written in English. Code comments stay in English (Language-001). UI strings in frontend code (not Markdown) remain Portuguese (pt-BR) per the original spec.
+Consequences: `README.md` and `evaluation/report.md` will be written in English.
 
 Do not backfill invented history. Record decisions that are observed, expressly documented, or approved during future work.
 

@@ -2,21 +2,21 @@
 
 ## Current repository architecture
 
-Nenhum componente implementado ainda (só `AGENTS.md` + `.ai/`). Arquitetura abaixo é **planejada** a partir do escopo aprovado em 2026-09-25, não observada.
+No components implemented yet (only `AGENTS.md` + `.ai/` + `docs/` + `.gitignore`; git on `main` with a public remote). The architecture below is **planned** from the approved scope (2026-09-25), not observed.
 
 ## Planned MVP architecture (target)
 
 ```text
-[web: Next.js ou Streamlit]
-  → POST /investigations (alerta) → [api: FastAPI + SQLite]
-  → dispara [n8n workflow: webhook → valida → busca contexto (RAG knowledge/ + MCP tools) → agente IA → diagnóstico JSON → grava banco → revisão humana]
-  → [mcp-server: 6 tools somente-leitura, dados sintéticos] ← [knowledge/: runbooks .md] + [sample-data/: alerts, logs, metrics, waf-events]
-  → [web: tela investigação + Observability + Uso seguro da IA]
+[web: Next.js]
+  → POST /investigations (alert) → [api: FastAPI + SQLite]
+  → triggers [n8n workflow: webhook → validate → context fetch (RAG knowledge/ + MCP tools) → AI agent → diagnosis JSON → DB write → human review]
+  → [mcp-server: 6 read-only tools, synthetic data] ← [knowledge/: .md runbooks] + [sample-data/: alerts, logs, metrics, waf-events]
+  → [web: investigation screen + Observability + Safe AI Use]
 ```
 
-- Data flow planejado: alerta → correlation_id → RAG (trechos relevantes com origem) → MCP (consultas) → prompt versionado `prompts/cloudops_investigator.md` → JSON validado por Pydantic → SQLite → human-in-the-loop (aprovar/rejeitar/editar/comentar/concluir).
-- Estrutura alvo: `apps/{api,web,mcp-server}/`, `workflows/cloudops-investigation.json`, `knowledge/{runbooks,service-catalog,architecture}/`, `prompts/`, `sample-data/{alerts,logs,metrics,waf-events}/`, `evaluation/{test-cases.json,run_evaluation.py,report.md}`, `docker-compose.yml`, `.env.example`, `README.md` (pt-BR).
-- Networking/deploy/infra reais: desconhecido; `docker-compose.yml` sobe todos os serviços localmente. Sem AWS real, sem credenciais.
+- Planned data flow: alert → correlation_id → RAG (relevant excerpts with traceable origin) → MCP (queries) → versioned prompt `prompts/cloudops_investigator.md` → Pydantic-validated JSON → SQLite → human-in-the-loop (approve/reject/edit/comment/close).
+- Target layout: `apps/{api,web,mcp-server}/`, `workflows/cloudops-investigation.json`, `knowledge/{runbooks,service-catalog,architecture}/`, `prompts/`, `sample-data/{alerts,logs,metrics,waf-events}/`, `evaluation/{test-cases.json,run_evaluation.py,report.md}`, `docker-compose.yml`, `.env.example`, `README.md` (in English).
+- Real networking/deploy/infra: unknown; `docker-compose.yml` runs all services locally. No real AWS, no credentials.
 
 ## Context-layer layout
 

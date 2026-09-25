@@ -12,11 +12,12 @@ No project code or configuration exists yet, so no historical naming, Terraform/
 - Do not introduce cloud, IaC, Kubernetes, or CI/CD conventions until those technologies are actually present.
 - Treat these recommendations as guidance, not historical decisions; replace them with observed project conventions as the repository evolves.
 
-## Language (decided 2026-09-25, per user request)
+## Language (decided 2026-09-25; extended to all Markdown the same day, Language-002)
 
 - Code comments: English only (all source files, all languages).
-- UI and user-facing docs (README, pages, prompts visíveis): Portuguese (pt-BR).
-- Portable agent context (`.ai/`): Portuguese where the team reads it, English where the template already uses it; keep each file internally consistent.
+- All Markdown files (`.md`): English only.
+- UI strings in frontend code (not Markdown): Portuguese (pt-BR), per the original spec.
+- Portable agent context (`.ai/`): English; keep each file internally consistent.
 - Never use the term "enterprise" in titles, texts, names, README, or code (project restriction).
 
 ## Documentation

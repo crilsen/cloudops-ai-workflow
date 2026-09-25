@@ -43,15 +43,15 @@ Risks / Open questions:
 
 | ID | Title | Status | Owner | File |
 | --- | --- | --- | --- | --- |
-| PRD-001 | CloudOps AI Workflow MVP | Approved | solicitante | `docs/plano-mvp.md` |
+| PRD-001 | CloudOps AI Workflow MVP | Approved | requester | `docs/mvp-plan.md` |
 
 ## Current requirements
 
-- Entrada de alerta + 4 alertas sintéticos demo (ver `docs/plano-mvp.md` §1).
-- Workflow n8n exportável com retry, logs, correlation_id (idem §2).
-- RAG local `knowledge/` + busca semântica com origem rastreável (idem §3).
-- MCP somente-leitura, 6 tools, dados sintéticos (idem §4).
-- Agente com prompt versionado + JSON validado por Pydantic (idem §5).
-- Tela de resultado + revisão humana (idem §6); Observability (idem §7); Uso seguro da IA (idem §8).
-- Estrutura de pastas, evaluation com `report.md` e README pt-BR (idem §9–11).
-- Restrições: sem "enterprise"; comentários de código em inglês; sem dados/credenciais reais.
+- Alert intake + 4 synthetic demo alerts (see `docs/mvp-plan.md` §1).
+- Exportable n8n workflow with retry, logs, correlation_id (idem §2).
+- Local RAG `knowledge/` + semantic search with traceable origin (idem §3).
+- Read-only MCP, 6 tools, synthetic data (idem §4).
+- Versioned-prompt agent + Pydantic-validated JSON (idem §5).
+- Result screen + human review (idem §6); Observability (idem §7); Safe AI Use (idem §8).
+- Folder layout, evaluation with `report.md`, and README in English (idem §9–11).
+- Restrictions: no "enterprise"; English code comments and Markdown; no real data/credentials.

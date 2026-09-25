@@ -2,17 +2,18 @@
 
 ## Active
 
-- Fase 1 — dados sintéticos (`sample-data/`, `knowledge/`). Bloqueada por 2 escolhas pendentes: Next.js vs Streamlit; ChromaDB vs pgvector (padrão proposto: Next.js + ChromaDB).
+- Phase 1 — synthetic data (`sample-data/`, `knowledge/`). Stack decided: Next.js + ChromaDB (confirmed 2026-09-25). Ready to start.
 
 ## Planned
 
-- Fase 2 MCP Server → Fase 3 API+RAG → Fase 4 workflow n8n → Fase 5 web → Fase 6 Compose+demos → Fase 7 evaluation+README (ver `docs/plano-mvp.md`).
+- Phase 2 MCP Server → Phase 3 API+RAG → Phase 4 n8n workflow → Phase 5 web → Phase 6 Compose+demos → Phase 7 evaluation+README (see `docs/mvp-plan.md`).
 
 ## Blocked
 
-- Escolhas de frontend e vector store (aguardando solicitante ou delegação do padrão).
+- None.
 
 ## Completed
 
-- 2026-09-25: bootstrap do contexto (PROJECT, ARCHITECTURE, CONVENTIONS, DECISIONS, TOOLS, VALIDATION, REQUIREMENTS/PRD-001, `docs/plano-mvp.md`).
-- 2026-09-25: repo git + GitHub público `crilsen/cloudops-ai-workflow` com descrição e 12 tópicos; push inicial `36c38fc`.
+- 2026-09-25: context bootstrap (PROJECT, ARCHITECTURE, CONVENTIONS, DECISIONS, TOOLS, VALIDATION, REQUIREMENTS/PRD-001, `docs/mvp-plan.md`).
+- 2026-09-25: git repo + public GitHub `crilsen/cloudops-ai-workflow` with description and 12 topics; pushes through `1e2beab`.
+- 2026-09-25: stack (Next.js + ChromaDB) and automatic context mode confirmed; all Markdown translated to English (Language-002).

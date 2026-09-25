@@ -3,20 +3,20 @@
 ## Identity
 
 - **Name:** CloudOps AI Workflow
-- **Objective:** Fluxo de IA para acelerar investigações operacionais em cloud: recebe um alerta técnico, reúne contexto de runbooks/fontes sintéticas, executa ferramentas controladas de consulta e gera diagnóstico estruturado para revisão humana.
-- **Repository purpose:** Portfólio. MVP funcional, não plataforma complexa. Interface e documentação em português.
-- **Status:** Bootstrap/adotado em 2026-09-25; nenhuma implementação ainda (só `AGENTS.md` + `.ai/`).
+- **Objective:** An AI flow that speeds up operational investigations in cloud environments: it receives a technical alert, gathers context from runbooks and synthetic sources, runs controlled query tools, and produces a structured diagnosis for human review.
+- **Repository purpose:** Portfolio. Functional MVP, not a complex platform. UI strings in Portuguese; all Markdown docs in English.
+- **Status:** Bootstrapped/adopted on 2026-09-25; no implementation yet (only `AGENTS.md` + `.ai/` + docs + `.gitignore`; git on `main` with a public remote).
 
 ## Observed
 
-- Diretório contém apenas `AGENTS.md`, `.ai/` e `.DS_Store`; sem código, sem `docker-compose.yml`, sem `README.md`, sem git (confirmado via `git status`: "not a git repository").
-- Escopo definido pelo solicitante em 2026-09-25: n8n + FastAPI + MCP Server Python + SQLite + frontend Next.js/TS/Tailwind (ou Streamlit) + Docker Compose + LLM com provider abstraído + ChromaDB/pgvector + n8n workflow JSON + evaluation.
-- Restrições explícitas: sem dados/credenciais reais, sem acesso irrestrito à AWS, tudo sintético; sem termo "enterprise"; IA só apoia, nunca executa ação destrutiva/autônoma.
+- The directory holds a git repo (`main`, remote `https://github.com/crilsen/cloudops-ai-workflow`, public); no app code, no `docker-compose.yml`, no `README.md` yet.
+- Scope defined by the requester on 2026-09-25: n8n + FastAPI + Python MCP Server + SQLite + Next.js/TS/Tailwind frontend + Docker Compose + abstracted-provider LLM + ChromaDB + n8n workflow JSON + evaluation.
+- Explicit restrictions: no real data/credentials, no unrestricted AWS access, everything synthetic; no term "enterprise"; AI only assists, never performs destructive/autonomous actions.
 
-## Stack alvo (planejado, não observado)
+## Target stack (planned, not observed)
 
-- Orquestrador: n8n (workflow exportável `workflows/cloudops-investigation.json`).
-- Backend: Python FastAPI; MCP Server Python somente-leitura; SQLite histórico.
-- Frontend: Next.js + TypeScript + Tailwind (fallback Streamlit se tempo exigir — decisão pendente).
-- RAG: base Markdown em `knowledge/` + busca semântica (ChromaDB ou pgvector).
-- LLM: provider abstraído via env (Anthropic Claude / OpenAI / Gemini); `.env.example` sem chaves reais.
+- Orchestrator: n8n (exportable workflow `workflows/cloudops-investigation.json`).
+- Backend: Python FastAPI; read-only Python MCP Server; SQLite history.
+- Frontend: Next.js + TypeScript + Tailwind (confirmed 2026-09-25).
+- RAG: Markdown base in `knowledge/` + semantic search (ChromaDB, confirmed 2026-09-25).
+- LLM: env-abstracted provider (Anthropic Claude / OpenAI / Gemini); `.env.example` with no real keys.
