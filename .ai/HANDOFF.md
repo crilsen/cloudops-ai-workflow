@@ -31,7 +31,8 @@ Bootstrap concluído e com push. Nenhuma implementação das Fases 1–7 iniciad
 
 ## Decisions Made
 
-- Padrão proposto (pendente de confirmação): Next.js + ChromaDB; provider LLM via env.
+- Padrão confirmado em 2026-09-25: Next.js + ChromaDB; provider LLM via env.
+- Modo de contexto: automático (registrado 2026-09-25; não perguntar de novo; manter `.ai/` atualizado via capture-learning).
 - Comentários de código sempre em inglês (pedido explícito do solicitante, 2x).
 
 ## Problems / Risks
