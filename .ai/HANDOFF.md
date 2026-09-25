@@ -2,7 +2,7 @@
 
 ## Resume block (read first)
 
-- Repo state: branch `main`, HEAD `1e2beab`, working tree clean after push, remote `https://github.com/crilsen/cloudops-ai-workflow` (public, pushed)
+- Repo state: branch `main`, HEAD `fd26bbb`, working tree clean after push, remote `https://github.com/crilsen/cloudops-ai-workflow` (public, pushed)
 - Source of truth: `AGENTS.md` → `.ai/`
 - Budget / usage observed: unknown
 - Checkpoint updated: 2026-09-25
