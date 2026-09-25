@@ -22,6 +22,7 @@ Bootstrap done and pushed. All Markdown translated to English (Language-002); `d
 ## What Was Done
 
 - Translated to English: PROJECT, ARCHITECTURE, DECISIONS (+Language-002), REQUIREMENTS, TASKS, CONVENTIONS language rule, HANDOFF, and the plan (`docs/mvp-plan.md`).
+- GitHub repo description switched to English (2026-09-25); all 12 topics already English.
 - Verified with a repo-wide scan: no Portuguese diacritics left in any `.md`.
 - Stack confirmed (Next.js + ChromaDB); context mode: automatic.
 
